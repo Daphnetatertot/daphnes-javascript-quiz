@@ -1,21 +1,54 @@
-function generateQuiz(questions, quizContainer, resultsContainer, submitButton)
+var answersContainer = document.querySelector('#answers')
+var quizContainer = document.querySelector('#quiz-container')
+var questions = [
+    {
+        num: 1,
+        question: 'What is the meaning of life?',
+        answers: ['ans 1', 'ans 2', 'ans 3', 'ans 4',
 
-    function showQuestions(questions, quizContainer){
+        ],
 
-        //add code 
+        correct: 'ans 2',
+    },
+    // reapeat above 5 times
+    {
+        num: 2,
+
     }
+]
 
-    function showResults (questions, quizContainer, resultsContainer){
+var currentQuestionIndex = 0
 
-        //add code
+function startQuiz(event) {
+    console.log('starting quiz...', event)
+    if (event.target) {
+        console.log(event.target)
+        showQuestions()
+    }
+}
+
+function showQuestions() {
+
+    answersContainer.setAttribute('hidden', false)
+
+    var currentQuestion = questions[currentQuestionIndex]
+    console.log('current question', currentQuestion)
+    //add code 
+}
+
+function showResults() {
+    console.log('showing results');
     
-    }
 
-    // show questions, add click feature, display results
+    //add code
 
-    showQuestions(questions, quizContainer);
+}
 
-    submitButton.onclick = function(){
+// show questions, add click feature, display results
 
-        showResults(questions,quizContainer, resultsContainer); 
-    }
+showQuestions(questions, quizContainer);
+
+submitButton.onclick = function () {
+
+    showResults(questions, quizContainer, resultsContainer);
+}
